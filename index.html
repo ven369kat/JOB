@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="Discover thoughtful career opportunities with TalentPulse. Find your next role in tech, design, marketing, and more.">
+  <title>Find your next opportunity — TalentPulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#jobs">Skip to job listings</a>
+  <!-- Primary navigation and employer call to action. -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#" aria-label="TalentPulse home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>talent<span class="brand-accent">pulse</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-links" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="primary-links">
+        <a class="nav-link active" href="#jobs">Find Jobs</a>
+        <a class="nav-link" href="#companies">Companies</a>
+        <a class="nav-link" href="#salary-guide">Salary Guide</a>
+        <a class="button button-primary nav-post" href="mailto:employers@talentpulse.example?subject=Post%20a%20job">Post a Job <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Search inputs and quick-search shortcuts. -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> A better way to find your next role</div>
+        <h1 id="hero-title">Make work mean <span>more.</span></h1>
+        <p class="hero-subtitle">Find a role that fits your life, your ambition, and everything you’re becoming.</p>
+
+        <form class="search-panel" id="search-form" role="search">
+          <label class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg>
+            <span class="visually-hidden">Job title or keyword</span>
+            <input id="keyword" type="search" placeholder="Job title or keyword" autocomplete="off">
+          </label>
+          <span class="search-divider" aria-hidden="true"></span>
+          <label class="search-field location-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+            <span class="visually-hidden">City, state, or remote</span>
+            <input id="location" type="search" placeholder="City, state, or remote" autocomplete="off">
+          </label>
+          <button class="button button-primary search-button" type="submit">Search jobs <span aria-hidden="true">→</span></button>
+        </form>
+
+        <div class="popular-searches">
+          <span>Popular:</span>
+          <button type="button" data-search="Product Designer">Product Designer</button>
+          <button type="button" data-search="Remote">Remote</button>
+          <button type="button" data-search="Marketing">Marketing</button>
+        </div>
+        <div class="hero-proof" aria-label="Trusted by job seekers">
+          <div class="proof-avatars" aria-hidden="true"><span>A</span><span>M</span><span>J</span><span>K</span></div>
+          <span><strong>12,000+</strong> people found their next thing</span>
+          <span class="proof-divider" aria-hidden="true"></span>
+          <span class="proof-rating"><span aria-hidden="true">★</span> 4.9/5 candidate rating</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters, live results, and the empty state are populated by script.js. -->
+    <section class="listing-section" id="jobs" aria-labelledby="jobs-heading">
+      <div class="container">
+        <div class="section-intro">
+          <div>
+            <div class="section-kicker">Your next chapter</div>
+            <h2 id="jobs-heading">Find your place</h2>
+            <p class="section-description">Good people. Great teams. Work worth doing.</p>
+          </div>
+          <div class="trusted-note"><span class="trusted-icon" aria-hidden="true">✦</span><span>Curated opportunities<br><strong>from teams that care</strong></span></div>
+        </div>
+
+        <div class="filter-toolbar">
+          <div class="filter-group" aria-label="Filter by job type">
+            <span class="filter-label">Job type</span>
+            <div class="filter-chips" id="type-filters">
+              <button class="filter-chip selected" type="button" data-type="All" aria-pressed="true">All jobs</button>
+              <button class="filter-chip" type="button" data-type="Full-time" aria-pressed="false">Full-time</button>
+              <button class="filter-chip" type="button" data-type="Part-time" aria-pressed="false">Part-time</button>
+              <button class="filter-chip" type="button" data-type="Contract" aria-pressed="false">Contract</button>
+              <button class="filter-chip" type="button" data-type="Remote" aria-pressed="false"><span class="remote-dot"></span>Remote</button>
+            </div>
+          </div>
+          <div class="filter-group experience-group">
+            <label class="filter-label" for="experience-filter">Experience</label>
+            <select id="experience-filter" class="select-control">
+              <option value="All">Any level</option>
+              <option value="Entry">Entry level</option>
+              <option value="Mid-Level">Mid-level</option>
+              <option value="Senior">Senior</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="results-toolbar">
+          <p id="results-count" aria-live="polite"></p>
+          <label class="sort-control" for="sort-select">Sort by
+            <select id="sort-select" class="select-control">
+              <option value="newest">Newest</option>
+              <option value="salary">Highest salary</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="job-grid" id="job-list" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <div class="empty-icon" aria-hidden="true">⌕</div>
+          <h3>No roles found this time</h3>
+          <p>Try a different title, location, or set of filters.</p>
+          <button class="button button-primary" id="reset-filters" type="button">Reset filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supporting company and salary-guide content. -->
+    <section class="company-strip" id="companies" aria-label="Featured companies">
+      <div class="container company-strip-inner">
+        <p>Thoughtful teams, <strong>better together.</strong></p>
+        <div class="company-logos" aria-label="Featured company names"><span>◈ northstar</span><span>◉ lumen</span><span>✳ arcwell</span><span>⬡ orbit</span><span>✦ fieldnote</span></div>
+      </div>
+    </section>
+
+    <section class="salary-strip" id="salary-guide">
+      <div class="container salary-inner">
+        <span class="salary-sparkle" aria-hidden="true">✳</span>
+        <div><h2>Know your worth.</h2><p>Clear salary ranges, right up front. Because transparency makes better work possible.</p></div>
+        <a class="button button-outline" href="mailto:hello@talentpulse.example?subject=Salary%20guide">Explore the salary guide <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Candidate and employer resources with a lightweight newsletter signup. -->
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <a class="brand footer-logo" href="#" aria-label="TalentPulse home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span>talent<span class="brand-accent">pulse</span></span>
+        </a>
+        <p>Work should feel like a good fit.<br>We’re here to help you find it.</p>
+      </div>
+      <div class="footer-links">
+        <div><h3>For candidates</h3><a href="#jobs">Browse jobs</a><a href="#salary-guide">Salary guide</a><a href="mailto:hello@talentpulse.example">Career advice</a></div>
+        <div><h3>For employers</h3><a href="mailto:employers@talentpulse.example">Post a job</a><a href="mailto:employers@talentpulse.example">Find talent</a><a href="mailto:hello@talentpulse.example">Employer resources</a></div>
+        <div class="newsletter"><h3>A little good news</h3><p>New roles and career notes, in your inbox.</p>
+          <form id="newsletter-form"><label class="visually-hidden" for="newsletter-email">Your email address</label><input id="newsletter-email" type="email" placeholder="you@example.com" required><button type="submit" aria-label="Subscribe to newsletter">→</button></form>
+          <p class="newsletter-message" id="newsletter-message" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="current-year"></span> TalentPulse. Here’s to what’s next.</span><div><a href="mailto:hello@talentpulse.example?subject=Privacy">Privacy</a><a href="mailto:hello@talentpulse.example?subject=Terms">Terms</a><a href="mailto:hello@talentpulse.example">Get in touch</a></div></div>
+  </footer>
+
+  <!-- Shared accessible dialog for role details and application submission. -->
+  <dialog class="application-modal" id="application-modal" aria-labelledby="modal-heading">
+    <div class="modal-header">
+      <div><span class="modal-kicker">Your next chapter starts here</span><h2 id="modal-heading">Apply for this role</h2></div>
+      <button class="modal-close" type="button" aria-label="Close application" data-close-modal>×</button>
+    </div>
+    <div class="role-details" id="role-details" hidden></div>
+    <div class="modal-content" id="application-content">
+      <p class="modal-role"><strong id="modal-job-title"></strong><span id="modal-company"></span></p>
+      <form id="application-form">
+        <input type="hidden" id="application-job-id">
+        <div class="form-row">
+          <label>Full name<input name="name" type="text" placeholder="Your name" autocomplete="name" required></label>
+          <label>Email address<input name="email" type="email" placeholder="you@example.com" autocomplete="email" required></label>
+        </div>
+        <label>Portfolio or LinkedIn <span class="optional">(optional)</span><input name="url" type="url" placeholder="https://"></label>
+        <label>Resume <span class="optional">(PDF, DOC, or DOCX)</span><input name="resume" type="file" accept=".pdf,.doc,.docx"></label>
+        <label>A note for the team <span class="optional">(optional)</span><textarea name="note" rows="3" maxlength="500" placeholder="What makes this opportunity interesting to you?"></textarea></label>
+        <button class="button button-primary submit-application" type="submit">Send application <span aria-hidden="true">→</span></button>
+        <p class="form-note">Your details are only shared with the hiring team.</p>
+      </form>
+    </div>
+    <div class="application-success" id="application-success" hidden>
+      <div class="success-icon" aria-hidden="true">✓</div><h3>Application sent!</h3>
+      <p>You’re one step closer. Good luck with your application — we’re rooting for you.</p>
+      <button class="button button-primary" type="button" data-close-modal>Back to jobs</button>
+    </div>
+  </dialog>
+</body>
+</html>
